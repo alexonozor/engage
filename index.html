@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>ENGAGE &#8211; HTML, CSS AND JAVASCRIPT 1 week lecture.</title>
+    <script type="text/javascript">
+    window._wpemojiSettings = {
+        "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/",
+        "ext": ".png",
+        "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/",
+        "svgExt": ".svg",
+        "source": {
+            "concatemoji": "http:\/\/demo.ventcampwp.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.3"
+        }
+    };
+    ! function(a, b, c) {
+        function d(a) {
+            var b, c, d, e, f = String.fromCharCode;
+            if (!k || !k.fillText) return !1;
+            switch (k.clearRect(0, 0, j.width, j.height), k.textBaseline = "top", k.font = "600 32px Arial", a) {
+                case "flag":
+                    return k.fillText(f(55356, 56826, 55356, 56819), 0, 0), !(j.toDataURL().length < 3e3) && (k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 57331, 65039, 8205, 55356, 57096), 0, 0), b = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 57331, 55356, 57096), 0, 0), c = j.toDataURL(), b !== c);
+                case "emoji4":
+                    return k.fillText(f(55357, 56425, 55356, 57341, 8205, 55357, 56507), 0, 0), d = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55357, 56425, 55356, 57341, 55357, 56507), 0, 0), e = j.toDataURL(), d !== e
+            }
+            return !1
+        }
+
+        function e(a) {
+            var c = b.createElement("script");
+            c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c)
+        }
+        var f, g, h, i, j = b.createElement("canvas"),
+            k = j.getContext && j.getContext("2d");
+        for (i = Array("flag", "emoji4"), c.supports = {
+                everything: !0,
+                everythingExceptFlag: !0
+            }, h = 0; h < i.length; h++) c.supports[i[h]] = d(i[h]), c.supports.everything = c.supports.everything && c.supports[i[h]], "flag" !== i[h] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[i[h]]);
+        c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function() {
+            c.DOMReady = !0
+        }, c.supports.everything || (g = function() {
+            c.readyCallback()
+        }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", g, !1), a.addEventListener("load", g, !1)) : (a.attachEvent("onload", g), b.attachEvent("onreadystatechange", function() {
+            "complete" === b.readyState && c.readyCallback()
+        })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji)))
+    }(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='css/styles.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='ventcamp-demo-style-css' href='css/ventcamp-demo-public.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-layout-css' href='css/woocommerce-layout.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-smallscreen-css' href='css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' id='woocommerce-general-css' href='css/woocommerce.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='js_composer_front-css' href='css/js_composer.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='bootstrap-css' href='css/bootstrap.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-css' href='css/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-lineicons-css' href='css/font-lineicons.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='toastr-css' href='css/toastr.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='ventcamp-style-css' href='css/style.css' type='text/css' media='all' />
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/jquery-migrate.min.js'></script>
+    <!--[if lt IE 9]>
+<script type='text/javascript' src='js/html5shiv.js'></script>
+<![endif]-->
+    <!--[if lt IE 9]>
+<script type='text/javascript' src='js/respond.min.js'></script>
+<![endif]-->
+    <link rel="canonical" href="index.html" />
+    <link rel='shortlink' href='index.html' />
+    <style type="text/css" id="document-style-css">
+
+    </style>
+    <style type="text/css">
+    .recentcomments a {
+        display: inline !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    </style>
+    <style type="text/css">
+    .recentcomments a {
+        display: inline !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    </style>
+    <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress." />
+    <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/vc_lte_ie9.min.css" media="screen"><![endif]-->
+    <style type='text/css'>
+    strong {
+        display: inline-block;
+        font-weight: 700;
+    }
+    </style>
+    <style type="text/css" data-type="vc_custom-css">
+    #newsletter .form {
+        padding: 0;
+    }
+    </style>
+    <style type="text/css" data-type="vc_shortcodes-custom-css">
+    .vc_custom_1452178757299 {
+        padding-top: 75px !important;
+        padding-bottom: 75px !important;
+    }
+    
+    .vc_custom_1453725781373 {
+        padding-top: 75px !important;
+        padding-bottom: 75px !important;
+    }
+    
+    .vc_custom_1453725122104 {
+        padding-top: 45px !important;
+    }
+    
+    .vc_custom_1452189199929 {
+        padding-top: 75px !important;
+        padding-bottom: 75px !important;
+    }
+    
+    .vc_custom_1453730540825 {
+        padding-top: 115px !important;
+        padding-bottom: 115px !important;
+    }
+    
+    .vc_custom_1453802453645 {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    
+    .vc_custom_1453802395410 {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    
+    .vc_custom_1453802404924 {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    
+    .vc_custom_1453802416925 {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    
+    .vc_custom_1453730496773 {
+        padding-top: 40px !important;
+        padding-right: 10px !important;
+        padding-bottom: 10px !important;
+        padding-left: 50px !important;
+    }
+    </style>
+    <noscript>
+        <style type="text/css">
+        .wpb_animate_when_almost_visible {
+            opacity: 1;
+        }
+        </style>
+    </noscript>
+</head>
+
+<body class="home page-template-default page page-id-1825 wpb-js-composer js-comp-ver-5.0.1 vc_responsive">
+    <div class="preloader-mask">
+        <div class="preloader"></div>
+    </div>
+    <div class="main-container">
+        <section id="hero" class="hero-section align-center light-text window-height center-content bg-cover" style="background-image: url(http://ventcampwp.com/wp-content/uploads/2015/11/header-bg.jpg); ">
+            <div class="hero-overlay"></div>
+            <!-- begin of socials block -->
+            <ul class="socials-nav">
+                <li class="socials-nav-item">
+                    <a href="http://facebook.com" target="_blank">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                </li>
+                <li class="socials-nav-item">
+                    <a href="http://twitter.com" target="_blank">
+                        <span class="fa fa-twitter"></span>
+                    </a>
+                </li>
+                <li class="socials-nav-item">
+                    <a href="http://google.com" target="_blank">
+                        <span class="fa fa-google"></span>
+                    </a>
+                </li>
+                <li class="socials-nav-item">
+                    <a href="http://instagram.com" target="_blank">
+                        <span class="fa fa-instagram"></span>
+                    </a>
+                </li>
+            </ul>
+            <!-- end of socials -->
+            <div class="heading-block">
+                <div class="container">
+                    <span class="hero-heading-top">
+                                    <span class="fa fa-calendar-o base-clr-txt"></span> 24-29.APR
+                    <span class="fa fa-map-marker base-clr-txt" style="margin-left: 14px;"></span> ECOTES, BENIN REP. </span>
+                    <h1 class="hero-heading-main">
+                    ENGAGE                </h1>
+                    <span class="hero-heading-bottom">
+                    Massive conference on web development and Mobile Developement
+                    </span>
+                    <div class="btns-container">
+                        <a href="#speakers" class="btn btn-md">
+                Know more            </a>
+                        <a href="https://goo.gl/forms/n1bvTPE5reCvr4v43" target="_blank" class="btn btn-alt btn-md">
+                Register now            </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <header class="header header-black">
+            <div class="header-wrapper">
+                <div class="container">
+                    <div class="col-sm-2 col-xs-12 navigation-header">
+                        <div class="table-container">
+                            <div class="cell-container">
+                                <a href="index.html" class="logo">
+                                    <img src="img/logo.png" srcset="img/logo.png 2x" height="17" width="119" alt="ENGAGE" /> </a>
+                                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-controls="navigation">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-xs-12 navigation-container">
+                        <div class="table-container">
+                            <div class="cell-container">
+                                <div id="navigation" class="navbar-collapse collapse">
+                                    <ul id="menu-theme-main" class="navigation-list pull-left">
+                                        <li id="menu-item-2647" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2647"><a href="#speakers">Speakers</a></li>
+                                        <li id="menu-item-2646" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2646"><a href="#schedule">Schedule</a></li>
+                                        <li id="menu-item-2648" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2648"><a href="#prices">Prices</a></li>
+                                        <li id="menu-item-2649" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2649"><a href="#sponsors">Sponsors</a></li>
+                                        <li id="menu-item-2650" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2650"><a href="#contacts">Contacts</a></li>
+                                    </ul> <a href="https://goo.gl/forms/n1bvTPE5reCvr4v43" target="_blank" class="pull-right btn-alt btn-sm buy-btn">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid">
+            <div class="content">
+                <main role='main'>
+                    <article id="page-1825" class="post-1825 page type-page status-publish hentry">
+                        <div class="entry-content">
+                            <div id="about" class="vc_row vc_inner vc_row-fluid row" style="" data-token="VIw1F">
+                                <div class="container">
+                                    <div class="vc_col-sm-12 wpb_column column_container  ">
+                                        <div class="wpb_wrapper">
+                                            <div class="vc_icon_element vc_icon_element-outer vc_icon_element-align-center">
+                                                <div class="vc_icon_element-inner vc_icon_element-color-accent-color vc_icon_element-size-lg vc_icon_element-style- vc_icon_element-background-color-grey">
+                                                    <span class="vc_icon_element-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></span></div>
+                                            </div>
+                                            <h3 style="text-align: center" class="vc_custom_heading">Novice meets Web Desginer</h3>
+                                            <div class="wpb_text_column wpb_content_element ">
+                                                <div class="wpb_wrapper">
+                                                    <p style="text-align: center;"><span style="color: #8d93a0;">Become a <mark>web designer</mark> in less than one week</span></p>
+                                                </div>
+                                            </div>
+                                            <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+                                            <div class="vc_tta-container" data-vc-action="collapse">
+                                                <div class="vc_general vc_tta vc_tta-tabs vc_tta-color-accent-color vc_tta-style-classic vc_tta-o-shape-group vc_tta-tabs-position-top vc_tta-controls-align-center">
+                                                    <div class="vc_tta-tabs-container">
+                                                        <ul class="vc_tta-tabs-list">
+                                                            <li class="vc_tta-tab vc_active" data-vc-tab><a href="index.html#html_and_css_tab" data-vc-tabs data-vc-container=".vc_tta"><i class="vc_tta-icon fa fa-caret-down"></i><span class="vc_tta-title-text">Topics</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="vc_tta-panels-container">
+                                                        <div class="vc_tta-panels">
+                                                            <div class="vc_tta-panel vc_active" id="html_and_css_tab" data-vc-content=".vc_tta-panel-body">
+                                                                <div class="vc_tta-panel-heading">
+                                                                    <h4 class="vc_tta-panel-title"><a href="index.html#html_and_css_tab" data-vc-accordion data-vc-container=".vc_tta-container"><i class=" fa fa-caret-down"></i><span class="vc_tta-title-text">Topics</span></a></h4></div>
+                                                                <div class="vc_tta-panel-body">
+                                                                    <div id="vsc_row_kvsgzchdld" class="vc_row vc_inner vc_row-fluid container" style="" data-token="ePexP">
+                                                                        <div class="vc_col-sm-5 wpb_column column_container  ">
+                                                                            <div class="wpb_wrapper">
+                                                                                <div class="wpb_single_image wpb_content_element vc_align_center  wpb_animate_when_almost_visible wpb_left-to-right left-to-right">
+                                                                                    <figure class="wpb_wrapper vc_figure">
+                                                                                        <div class="vc_single_image-wrapper all  vc_box_border_grey"><img width="371" height="412" src="img/lap.png" class="vc_single_image-img attachment-full" alt="" srcset="img/lap.png 371w, img/lap.png 270w, img/lap.png 63w" sizes="(max-width: 371px) 100vw, 371px" /></div>
+                                                                                    </figure>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="vc_col-sm-7 wpb_column column_container  ">
+                                                                            <div class="wpb_wrapper">
+                                                                                <h6 style="text-align: left" class="vc_custom_heading heading-alt">What you will learn</h6>
+                                                                                <div class="wpb_text_column wpb_content_element ">
+                                                                                    <div class="wpb_wrapper">
+                                                                                        <p><strong>HTML 5</strong> is the latest version of <strong>Hypertext Markup Language</strong>, the code that describes web pages. HTML provides the structure of a web page.<br> <a href="https://www.w3schools.com/html/">Read More >></a> </p>
+                                                                                        <p><strong>CSS3</strong> is the latest evolution of the Cascading Style Sheets language and aims at extending CSS2.1. It brings a lot of long-awaited novelties, like rounded corners, shadows, gradients, transitions or animations, as well as new layouts like multi-columns, flexible box or grid layouts.<br> <a href="https://www.w3schools.com/css/">Read More >></a></p>
+                                                                                        <p><strong>JavaScript</strong> an object-oriented computer programming language commonly used to create interactive effects within web browsers.<br> <a href="https://www.w3schools.com/js/">Read More >></a></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="vsc_row_orqszygkld" class="vc_row vc_inner vc_row-fluid vc_custom_1452178757299 row parallax-bg-row inherit-color" style="background-image: url(http://demo.ventcampwp.com/wp-content/uploads/2015/11/stat-bg.jpg); background-repeat: ; -webkit-background-size: cover; background-size: cover; background-position: center; background-attachment: fixed; color: #ffffff;" data-token="mGdUc">
+                                <div class="row-overlay clearfix " style="background-color: rgba(22,18,18,0.8);"></div>
+                                <div class="container">
+                                    <div class="vc_col-sm-3 wpb_column column_container  align-center">
+                                        <div class="wpb_wrapper">
+                                            <div class="counter-block counter-block-no-border " data-counter-value="3">
+                                                <div class="counter-box">
+                                                    <div class="counter-content">
+                                                        <span class="count" data-to="3"></span>
+                                                        <p class="title" style="color: #ffffff;">SPEAKERS</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vc_col-sm-3 wpb_column column_container  align-center">
+                                        <div class="wpb_wrapper">
+                                            <div class="counter-block counter-block-no-border " data-counter-value="6">
+                                                <div class="counter-box">
+                                                    <div class="counter-content">
+                                                        <span class="count" data-to="6"></span>
+                                                        <p class="title" style="color: #ffffff;">DAYS</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vc_col-sm-3 wpb_column column_container  align-center">
+                                        <div class="wpb_wrapper">
+                                            <div class="counter-block counter-block-no-border " data-counter-value="25">
+                                                <div class="counter-box">
+                                                    <div class="counter-content">
+                                                        <span class="count" data-to="25"></span>
+                                                        <p class="title" style="color: #ffffff;">WORKSHOPS</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vc_col-sm-3 wpb_column column_container  align-center">
+                                        <div class="wpb_wrapper">
+                                            <div class="counter-block counter-block-no-border " data-counter-value="500">
+                                                <div class="counter-box">
+                                                    <div class="counter-content">
+                                                        <span class="count" data-to="500"></span>
+                                                        <p class="title" style="color: #ffffff;">Seats</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="speakers" class="vc_row vc_inner vc_row-fluid container" style="" data-token="zwEkA">
+                                <div class="vc_col-sm-12 wpb_column column_container  ">
+                                    <div class="wpb_wrapper">
+                                        <div class="vc_icon_element vc_icon_element-outer vc_icon_element-align-center">
+                                            <div class="vc_icon_element-inner vc_icon_element-color-accent-color vc_icon_element-size-lg vc_icon_element-style- vc_icon_element-background-color-grey">
+                                                <span class="vc_icon_element-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></span></div>
+                                        </div>
+                                        <h3 style="text-align: center" class="vc_custom_heading">Keynote speakers</h3>
+                                        <div class="wpb_text_column wpb_content_element ">
+                                            <div class="wpb_wrapper">
+                                                <p style="text-align: center;"><span style="color: #8d93a0;">Meet our most valued <mark>speakes</mark></span></p>
+                                            </div>
+                                        </div>
+                                        <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+                                        <div class="speakers speakers-full speakers-3-columns photo-round-shape photo-md hide-socials">
+                                            <div class='speaker-col'>
+                                                <div class='speaker'>
+                                                    <div class='photo-wrapper' style="background-image: url(img/urch.jpg);"></div>
+                                                    <h3 class='name'>MBA UCHENNA</h3>
+                                                    <p class='text-alt'><small>CEO @ MADSUITE TECHNOLOGIES</small></p>
+                                                    <p class='about'>CSS Instructor</p>
+                                                    <ul class='speaker-socials'>
+                                                        <li><a target='_blank' href='http://fb.com/urchymanny'><span class='fa fa-facebook'></span></a></li>
+                                                        <li><a target='_blank' href='http://twitter.com/urchy_manny'><span class='fa fa-twitter'></span></a></li>
+                                                        <li><a target='_blank' href='https://www.linkedin.com/in/urchymanny/'><span class='fa fa-linkedin'></span></a></li>
+                                                        <li><a target='_blank' href='skype:live:urchman0000?call'><span class='fa fa-skype'></span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class='speaker-col'>
+                                                <div class='speaker'>
+                                                    <div class='photo-wrapper' style="background-image: url(img/alex.jpg);"></div>
+                                                    <h3 class='name'>ALEX ONOZOR</h3>
+                                                    <p class='text-alt'><small>Software Developer @ Yudala</small></p>
+                                                    <p class='about'>Javascript Instructor</p>
+                                                    <ul class='speaker-socials'>
+                                                        <li><a target='_blank' href='http://fb.com/onozor'><span class='fa fa-facebook'></span></a></li>
+                                                        <li><a target='_blank' href='http://twitter.com/onozor'><span class='fa fa-twitter'></span></a></li>
+                                                        <li><a target='_blank' href='https://www.linkedin.com/in/obogbare-alex-onozor-62697a63/'><span class='fa fa-linkedin'></span></a></li>
+                                                        <li><a target='_blank' href='skype:facebook:onozor?call'><span class='fa fa-skype'></span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class='speaker-col'>
+                                                <div class='speaker'>
+                                                    <div class='photo-wrapper' style="background-image: url(img/esom.jpg);"></div>
+                                                    <h3 class='name'>ESOM EKEH</h3>
+                                                    <p class='text-alt'><small>CTO @ Novotech</small></p>
+                                                    <p class='about'>HTML Instructor</p>
+                                                    <ul class='speaker-socials'>
+                                                        <li><a target='_blank' href='https://web.facebook.com/somkyd'><span class='fa fa-facebook'></span></a></li>
+                                                        <li><a target='_blank' href='http://twitter.com/somkyd'><span class='fa fa-twitter'></span></a></li>
+                                                        <li><a target='_blank' href='https://www.linkedin.com/in/ekeh-esom-42751014/'><span class='fa fa-linkedin'></span></a></li>
+                                                        <li><a target='_blank' href='skype:facebook:reachsj?call'><span class='fa fa-skype'></span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class='speaker-col'>
+                                                <div class='speaker'>
+                                                    <div class='photo-wrapper' style="background-image: url(img/dum.jpeg);"></div>
+                                                    <h3 class='name'>DUMEBE NWANZE</h3>
+                                                    <p class='text-alt'><small>SUG ECOTES</small></p>
+                                                    <p class='about'></p>
+                                                    <ul class='speaker-socials'>
+                                                        <li><a target='_blank' href='https://www.facebook.com/Stanlhee'><span class='fa fa-facebook'></span></a></li>
+                                                        <li><a target='_blank' href='https://www.instagram.com/Stan_khizz'><span class='fa fa-instagram'></span></a></li>
+                                                        <li><a target='_blank' href='mailto:dumebinwaeze@gmail.com'><span class='fa fa-envelope'></span></a></li>
+                                                        <li><a target='_blank' href='tel:+2348136821337'><span class='fa fa-whatsapp'></span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="schedule" class="vc_row vc_inner vc_row-fluid container" style="" data-token="XhZag">
+                                <div class="vc_col-sm-12 wpb_column column_container  ">
+                                    <div class="wpb_wrapper">
+                                        <div class="vc_icon_element vc_icon_element-outer vc_icon_element-align-center">
+                                            <div class="vc_icon_element-inner vc_icon_element-color-accent-color vc_icon_element-size-lg vc_icon_element-style- vc_icon_element-background-color-grey">
+                                                <span class="vc_icon_element-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></span></div>
+                                        </div>
+                                        <h3 style="text-align: center" class="vc_custom_heading">Schedule</h3>
+                                        <div class="wpb_text_column wpb_content_element ">
+                                            <div class="wpb_wrapper">
+                                                <p style="text-align: center;"><span style="color: #8d93a0;">This is a <mark>rundown</mark> of the conference</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+                                        <div class="schedule">
+                                            <ul class="nav nav-schedule ">
+                                                <li class="active"><a href='index.html#day0' data-toggle='tab'><h4 class='highlight'>Day 1</h4><p class='text-alt'>04/24/2016</p></a></li>
+                                                <li><a href='index.html#day1' data-toggle='tab'><h4 class='highlight'>Day 2</h4><p class='text-alt'>04/25/2016</p></a></li>
+                                                <li><a href='index.html#day2' data-toggle='tab'><h4 class='highlight'>Day 3</h4><p class='text-alt'>04/26/2016</p></a></li>
+                                                <li><a href='index.html#day3' data-toggle='tab'><h4 class='highlight'>Day 4</h4><p class='text-alt'>04/27/2016</p></a></li>
+                                                <li><a href='index.html#day4' data-toggle='tab'><h4 class='highlight'>Day 5</h4><p class='text-alt'>04/28/2016</p></a></li>
+                                                <li><a href='index.html#day5' data-toggle='tab'><h4 class='highlight'>Day 6</h4><p class='text-alt'>04/29/2016</p></a></li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div id='day0' class='tab-pane fade in active'>
+                                                    <ul class="nav nav-schedule ">
+                                                        <li class="active"><a href='index.html#day0_auditorium0' data-toggle='tab'>AUDITORIUM</a></li>
+                                                    </ul>
+                                                    <div class="tab-content tab-content-schedule">
+                                                        <div id='day0_auditorium0' class='tab-pane fade in active'>
+                                                            <div class='panel-group' id='day0_auditorium0_timeline'>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/alex.jpg')"></div><a data-toggle='collapse' data-parent='#day0_auditorium0_timeline' href='index.html#day0_auditorium0_timeline_time0' class='schedule-item-toggle '><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:00 PM</strong><h6 class="title">Introduction of  Instructors and other support member<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day0_auditorium0_timeline_time0' class='panel-collapse collapse schedule-item-body in'>
+                                                                        <article>
+                                                                            <p class='description'>Get to meet the instructors and all member that support this conference in one manner or the other.</p><strong class='highlight speaker-name'>ALEX ONOZOR</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/alex.jpg')"></div><a data-toggle='collapse' data-parent='#day0_auditorium0_timeline' href='index.html#day0_auditorium0_timeline_time1' class='schedule-item-toggle  collapsed'><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:30 PM</strong><h6 class="title">Introduction of Web development & mobile development<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day0_auditorium0_timeline_time1' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>Everything you need to know before embarking on your journey to web development world.</p><strong class='highlight speaker-name'>ALEX ONOZOR</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/alex.jpg')"></div><a data-toggle='collapse' data-parent='#day0_auditorium0_timeline' href='index.html#day0_auditorium0_timeline_time2' class='schedule-item-toggle  collapsed'><strong class="time highlight"><i class=" icon fa fa-clock-o"></i> 5:00 PM</strong><h6 class="title">Getting started with web development and mobile development<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day0_auditorium0_timeline_time2' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>Everything you need to have for a building a web site.</p><strong class='highlight speaker-name'>ALEX ONOZOR</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/esom.jpg')"></div><a data-toggle='collapse' data-parent='#day0_auditorium0_timeline' href='index.html#day0_auditorium0_timeline_time3' class='schedule-item-toggle  collapsed'><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 5:30 PM</strong><h6 class="title">Learning Basic HTML 5<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day0_auditorium0_timeline_time3' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>HTML 5 basics, write your first code.</p><strong class='highlight speaker-name'>ESOM EKEH</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id='day1' class='tab-pane fade in '>
+                                                    <ul class="nav nav-schedule ">
+                                                        <li class="active"><a href='index.html#day1_auditorium0' data-toggle='tab'>AUDITORIUM</a></li>
+                                                    </ul>
+                                                    <div class="tab-content tab-content-schedule">
+                                                        <div id='day1_auditorium0' class='tab-pane fade in active'>
+                                                            <div class='panel-group' id='day1_auditorium0_timeline'>
+
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/esom.jpg')"></div><a data-toggle='collapse' data-parent='#day1_auditorium0_timeline' href='index.html#day1_auditorium0_timeline_time0' class='schedule-item-toggle '><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:00 PM</strong><h6 class="title">Advance HTML5  with(Assignment and Classwork)<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day1_auditorium0_timeline_time0' class='panel-collapse collapse schedule-item-body in'>
+                                                                        <article>
+                                                                            <p class='description'>HTML 5 elements, tags and practice.</p><strong class='highlight speaker-name'>ESOM EKEH</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/urch.jpg')"></div><a data-toggle='collapse' data-parent='#day1_auditorium0_timeline' href='index.html#day1_auditorium0_timeline_time1' class='schedule-item-toggle '><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 5:30 PM</strong><h6 class="title">Learning CSS3 Basics<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day1_auditorium0_timeline_time1' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>Inline sytlesheet, external stylesheets and practice.</p><strong class='highlight speaker-name'>MBA UCHENNA</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id='day2' class='tab-pane fade in '>
+                                                    <ul class="nav nav-schedule ">
+                                                        <li class="active"><a href='index.html#day2_auditorium0' data-toggle='tab'>AUDITORIUM</a></li>
+                                                    </ul>
+                                                    <div class="tab-content tab-content-schedule">
+                                                        <div id='day2_auditorium0' class='tab-pane fade in active'>
+                                                            <div class='panel-group' id='day2_auditorium0_timeline'>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/urch.jpg')"></div><a data-toggle='collapse' data-parent='#day2_auditorium0_timeline' href='index.html#day2_auditorium0_timeline_time0' class='schedule-item-toggle '><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:00 PM</strong><h6 class="title">Advance CSS3(Assignment and Classwork)<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day2_auditorium0_timeline_time0' class='panel-collapse collapse schedule-item-body in'>
+                                                                        <article>
+                                                                            <p class='description'>Complex CSS, Nesting and Grouping.</p><strong class='highlight speaker-name'>MBA UCHENNA</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/urch.jpg')"></div><a data-toggle='collapse' data-parent='#day2_auditorium0_timeline' href='index.html#day2_auditorium0_timeline_time1' class='schedule-item-toggle '><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 5:00 PM</strong><h6 class="title">Building a Basic website with HTML5 & CSS<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day2_auditorium0_timeline_time1' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>Building a simple site with just HTML and CSS only.</p><strong class='highlight speaker-name'>MBA UCHENNA</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/alex.jpg')"></div><a data-toggle='collapse' data-parent='#day2_auditorium0_timeline' href='index.html#day2_auditorium0_timeline_time2' class='schedule-item-toggle '><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 5:30 PM</strong><h6 class="title">Sharing of Helpful Resources<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day2_auditorium0_timeline_time2' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>Readable PDFs and Video to help students learn more.</p><strong class='highlight speaker-name'>ALEX ONOZOR</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id='day3' class='tab-pane fade in '>
+                                                    <ul class="nav nav-schedule ">
+                                                        <li class="active"><a href='index.html#day3_auditorium0' data-toggle='tab'>AUDITORIUM</a></li>
+                                                    </ul>
+                                                    <div class="tab-content tab-content-schedule">
+                                                        <div id='day3_auditorium0' class='tab-pane fade in active'>
+                                                            <div class='panel-group' id='day3_auditorium0_timeline'>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/alex.jpg')"></div><a data-toggle='collapse' data-parent='#day3_auditorium0_timeline' href='index.html#day3_auditorium0_timeline_time0' class='schedule-item-toggle '><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:00 PM</strong><h6 class="title">Introduction of Javascript<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day3_auditorium0_timeline_time0' class='panel-collapse collapse schedule-item-body in'>
+                                                                        <article>
+                                                                            <p class='description'>Everything you need to know about Javascript.</p><strong class='highlight speaker-name'>ALEX ONOZOR</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/alex.jpg')"></div><a data-toggle='collapse' data-parent='#day3_auditorium0_timeline' href='index.html#day3_auditorium0_timeline_time1' class='schedule-item-toggle collapsed'><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:30 PM</strong><h6 class="title">Understanding Javascript<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day3_auditorium0_timeline_time1' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>Everything you need to know about Javascript.</p><strong class='highlight speaker-name'>ALEX ONOZOR</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/alex.jpg')"></div><a data-toggle='collapse' data-parent='#day3_auditorium0_timeline' href='index.html#day3_auditorium0_timeline_time2' class='schedule-item-toggle collapsed'><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:30 PM</strong><h6 class="title">Learning the basics of Javascript.<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day3_auditorium0_timeline_time2' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>Javascript in practice.</p><strong class='highlight speaker-name'>ALEX ONOZOR</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper" style="background-image: url('img/alex.jpg')"></div><a data-toggle='collapse' data-parent='#day3_auditorium0_timeline' href='index.html#day3_auditorium0_timeline_time3' class='schedule-item-toggle collapsed'><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:30 PM</strong><h6 class="title">Building a simple ATM in Javascript.<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day3_auditorium0_timeline_time3' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>Javascript in practice.</p><strong class='highlight speaker-name'>ALEX ONOZOR</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id='day4' class='tab-pane fade in '>
+                                                    <ul class="nav nav-schedule ">
+                                                        <li class="active"><a href='index.html#day4_auditorium0' data-toggle='tab'>AUDITORIUM</a></li>
+                                                    </ul>
+                                                    <div class="tab-content tab-content-schedule">
+                                                        <div id='day4_auditorium0' class='tab-pane fade in active'>
+                                                            <div class='panel-group' id='day4_auditorium0_timeline'>
+
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper default-icon"></div><a data-toggle='collapse' data-parent='#day4_auditorium0_timeline' href='index.html#day4_auditorium0_timeline_time0' class='schedule-item-toggle '><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:00 PM</strong><h6 class="title">Getting started With mobile website using Twitter Bootrap and jQuery.<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day4_auditorium0_timeline_time0' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>HTML5, CSS3, jQuery for web design.</p><strong class='highlight speaker-name'>ESOM EKEH AND MBA UCHENNA</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper default-icon"></div><a data-toggle='collapse' data-parent='#day4_auditorium0_timeline' href='index.html#day4_auditorium0_timeline_time1' class='schedule-item-toggle collapsed'><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:30 PM</strong><h6 class="title">Building a mobile application using html5, CSS3, Javascript, and Phone-Gap.<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day4_auditorium0_timeline_time1' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>All you need to know about Phone Gap.</p><strong class='highlight speaker-name'>ALEX ONOZOR, ESOM EKEH AND MBA UCHENNA</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper default-icon"></div><a data-toggle='collapse' data-parent='#day4_auditorium0_timeline' href='index.html#day4_auditorium0_timeline_time2' class='schedule-item-toggle collapsed'><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 5:30 PM</strong><h6 class="title">Classworks and Assignment.<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day4_auditorium0_timeline_time2' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>HTML5, CSS3, jQuery for web design.</p><strong class='highlight speaker-name'>STUDENTS</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id='day5' class='tab-pane fade in '>
+                                                    <ul class="nav nav-schedule ">
+                                                        <li class="active"><a href='index.html#day5_auditorium0' data-toggle='tab'>AUDITORIUM</a></li>
+                                                    </ul>
+                                                    <div class="tab-content tab-content-schedule">
+                                                        <div id='day5_auditorium0' class='tab-pane fade in active'>
+                                                            <div class='panel-group' id='day5_auditorium0_timeline'>
+
+                                                                <div class="panel schedule-item">
+                                                                    <div class="lecture-icon-wrapper default-icon"></div><a data-toggle='collapse' data-parent='#day5_auditorium0_timeline' href='index.html#day5_auditorium0_timeline_time0' class='schedule-item-toggle '><strong class="time highlight"><i class="icon fa fa-clock-o"></i> 4:00 PM</strong><h6 class="title">Supports, Motivation and creating remote communication channels.<i class="icon fa fa-caret-down"></i></h6></a>
+                                                                    <div id='day5_auditorium0_timeline_time0' class='panel-collapse collapse schedule-item-body'>
+                                                                        <article>
+                                                                            <p class='description'>Conclusions and all.</p><strong class='highlight speaker-name'>DUMEBE NWANZE</strong></article>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="newsletter" class="vc_row vc_inner vc_row-fluid vc_custom_1453725781373 row parallax-bg-row inherit-color" style="background-image: url(http://demo.ventcampwp.com/wp-content/uploads/2015/11/bg4-2000x693.jpg); background-repeat: ; -webkit-background-size: cover; background-size: cover; background-position: center; background-attachment: fixed; color: #ffffff;" data-token="bmov4">
+                                <div class="row-overlay clearfix " style="background-color: rgba(40,47,67,0.85);"></div>
+                                <div class="container">
+                                    <div class="vc_col-sm-12 wpb_column column_container  align-center">
+                                        <div class="wpb_wrapper">
+                                            <h3 style="text-align: center" class="vc_custom_heading"><mark>Newsletter</mark> signup</h3>
+                                            <div class="wpb_text_column wpb_content_element ">
+                                                <div class="wpb_wrapper">
+                                                    <p style="text-align: center;"><span style="color: #8d93a0;"><span style="color: #ffffff;">Shortest way to explore what will happen on ENGAGE</span>
+                                                        <br />
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div id="vsc_row_yltrqsksld" class="vc_row vc_inner vc_row-fluid container" style="" data-token="lkCPf">
+                                                <div class="vc_col-sm-3 wpb_column column_container  ">
+                                                    <div class="wpb_wrapper">
+                                                    </div>
+                                                </div>
+                                                <div class="vc_col-sm-6 wpb_column column_container  ">
+                                                    <div class="wpb_wrapper">
+                                                        <div class="contact-form-7-data" data-token="ETvhi">
+                                                            <div role="form" class="wpcf7" id="wpcf7-f1343-p1825-o1" lang="en-US" dir="ltr">
+                                                                <div class="screen-reader-response"></div>
+                                                                <form action="index.html#wpcf7-f1343-p1825-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+                                                                    <div style="display: none;">
+                                                                        <input type="hidden" name="_wpcf7" value="1343" />
+                                                                        <input type="hidden" name="_wpcf7_version" value="4.6" />
+                                                                        <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                                                                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1343-p1825-o1" />
+                                                                        <input type="hidden" name="_wpnonce" value="16ada93993" />
+                                                                    </div>
+                                                                    <div class="form form-overlay">
+                                                                        <div class="form-group col-sm-8">
+                                                                            <span class="wpcf7-form-control-wrap EMAIL"><input type="email" name="EMAIL" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="E-mail" /></span>
+                                                                        </div>
+                                                                        <div class="form-group col-sm-4">
+                                                                            <input type="submit" value="GO" class="wpcf7-form-control wpcf7-submit btn btn-sm base_clr_bg btn-solid" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="vc_col-sm-3 wpb_column column_container  ">
+                                                    <div class="wpb_wrapper">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="prices" class="vc_row vc_inner vc_row-fluid container" style="" data-token="ef6QS">
+                                <div class="vc_col-sm-12 wpb_column column_container  ">
+                                    <div class="wpb_wrapper">
+                                        <div class="vc_icon_element vc_icon_element-outer vc_icon_element-align-center">
+                                            <div class="vc_icon_element-inner vc_icon_element-color-accent-color vc_icon_element-size-lg vc_icon_element-style- vc_icon_element-background-color-grey">
+                                                <span class="vc_icon_element-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></span></div>
+                                        </div>
+                                        <h3 style="text-align: center" class="vc_custom_heading">Event Registration</h3>
+                                        <div class="wpb_text_column wpb_content_element ">
+                                            <div class="wpb_wrapper">
+                                                <p style="text-align: center;"><span style="color: #8d93a0;">Hurry up and register for <mark>ENGAGE</mark> <br />
+</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+                                        <div class="pricetable pricetable-default pricetable-standart pricetable-3-columns">
+                                            <div class='pricetable-col'>
+                                                <div class='package-column'>
+                                                    <h6 class='package-title'>Registration Fee</h6>
+                                                    <div class='package-price'><span class='currency'></span>5000</div>
+                                                    <div class='package-detail'>
+                                                        <h4>CFA</h4>
+                                                    </div>
+                                                    <a href='https://goo.gl/forms/n1bvTPE5reCvr4v43' target="_blank" class='btn btn-lg'>Register now</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="vsc_row_uzqoauxxfs" class="vc_row vc_inner vc_row-fluid vc_custom_1452189199929 row parallax-bg-row inherit-color" style="background-image: url(http://demo.ventcampwp.com/wp-content/uploads/2015/11/bg4-2000x693.jpg); background-repeat: ; -webkit-background-size: cover; background-size: cover; background-position: center; background-attachment: fixed; color: #ffffff;" data-token="I7D94">
+                                <div class="row-overlay clearfix " style="background-color: rgba(247,74,0,0.82);"></div>
+                                <div class="container">
+                                    <div class="vc_col-sm-12 wpb_column column_container  align-center">
+                                        <div class="wpb_wrapper">
+                                            <section class="vc_cta3-container">
+                                                <div class="vc_general vc_cta3 vc_cta3-style-custom vc_cta3-shape-square vc_cta3-align-center vc_cta3-icon-size-md vc_cta3-actions-bottom">
+                                                    <div class="vc_cta3_content-container">
+                                                        <div class="vc_cta3-content">
+                                                            <header class="vc_cta3-content-header">
+                                                                <h2 style="color:#ffffff;">Register to ENGAGE now!</h2> </header>
+                                                            <p>Learn web designing and mobile development basics from professional developers</p>
+                                                        </div>
+                                                        <div class="vc_cta3-actions">
+                                                            <div class="vc_btn3-container vc_btn3-inline">
+                                                                <button onmouseleave="this.style.borderColor='#ffffff'; this.style.backgroundColor='transparent'; this.style.color='#ffffff'" onmouseenter="this.style.borderColor='#ffffff'; this.style.backgroundColor='#ffffff'; this.style.color='#fe4918';" style="border-color:#ffffff; color:#ffffff;" class="btn btn-md btn-alt vc_btn3-size-md vc_btn3-shape-rounded vc_btn3-style-outline-custom" href="https://goo.gl/forms/n1bvTPE5reCvr4v43" target="_blank">REGISTER</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="sponsors" class="vc_row vc_inner vc_row-fluid container" style="" data-token="X13KB">
+                                <div class="vc_col-sm-12 wpb_column column_container  ">
+                                    <div class="wpb_wrapper">
+                                        <div class="vc_icon_element vc_icon_element-outer vc_icon_element-align-center">
+                                            <div class="vc_icon_element-inner vc_icon_element-color-accent-color vc_icon_element-size-lg vc_icon_element-style- vc_icon_element-background-color-grey">
+                                               <span class="vc_icon_element-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></span></div>
+                                        </div>
+                                        <h3 style="text-align: center" class="vc_custom_heading">General sponsors</h3>
+                                        <div class="wpb_text_column wpb_content_element ">
+                                            <div class="wpb_wrapper">
+                                                <p style="text-align: center;"><span style="color: #8d93a0;">these <mark>awesome</mark> companies support us</span></p>
+                                            </div>
+                                        </div>
+                                        <div id="vsc_row_uenmcttkcl" class="vc_row vc_inner vc_row-fluid vc_custom_1453802453645 container" style="" data-token="hO8Qb">
+                                            <div class="vc_col-sm-3 wpb_column column_container  ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="wpb_single_image wpb_content_element vc_align_center">
+                                                        <figure class="wpb_wrapper vc_figure">
+                                                            <a href="http://madsuite.com" target="_blank" class="vc_single_image-wrapper all  vc_box_border_grey"><img width="175" height="175" src="img/mad.png" class="vc_single_image-img attachment-full" alt="" srcset="img/mad.png 175w, img/mad.png 150w, img/mad.png 70w" sizes="(max-width: 175px) 100vw, 175px" /></a>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="vc_col-sm-3 wpb_column column_container  ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="wpb_single_image wpb_content_element vc_align_center">
+                                                        <figure class="wpb_wrapper vc_figure">
+                                                            <a href="#" target="_blank" class="vc_single_image-wrapper all  vc_box_border_grey"><img width="175" height="175" src="img/benin.jpeg" class="vc_single_image-img attachment-full" alt="" srcset="img/benin.jpeg 175w, img/benin.jpeg 150w, img/benin.jpeg 70w" sizes="(max-width: 175px) 100vw, 175px" /></a>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="vc_col-sm-3 wpb_column column_container  ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="wpb_single_image wpb_content_element vc_align_center">
+                                                        <figure class="wpb_wrapper vc_figure">
+                                                            <a href="#" target="_blank" class="vc_single_image-wrapper all  vc_box_border_grey"><img width="175" height="175" src="https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=X8NTlbh0Sru9KEmZoVPwh%2FfRayI%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta9Er0Vinkhwfjw8177yE41y87UNCVordEGXyD3u0qYrdfyboLMXYfbeluV8XeioclA1kd_KhRGLoD5a8Kt7pf95xjsHlcY24ZxUBbFI8lWxI" class="vc_single_image-img attachment-full" alt="" srcset="https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=X8NTlbh0Sru9KEmZoVPwh%2FfRayI%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta9Er0Vinkhwfjw8177yE41y87UNCVordEGXyD3u0qYrdfyboLMXYfbeluV8XeioclA1kd_KhRGLoD5a8Kt7pf95xjsHlcY24ZxUBbFI8lWxI 175w, https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=X8NTlbh0Sru9KEmZoVPwh%2FfRayI%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta9Er0Vinkhwfjw8177yE41y87UNCVordEGXyD3u0qYrdfyboLMXYfbeluV8XeioclA1kd_KhRGLoD5a8Kt7pf95xjsHlcY24ZxUBbFI8lWxI 150w, https://media.licdn.com/media-proxy/ext?w=800&h=800&f=n&hash=X8NTlbh0Sru9KEmZoVPwh%2FfRayI%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta9Er0Vinkhwfjw8177yE41y87UNCVordEGXyD3u0qYrdfyboLMXYfbeluV8XeioclA1kd_KhRGLoD5a8Kt7pf95xjsHlcY24ZxUBbFI8lWxI 70w" sizes="(max-width: 175px) 100vw, 175px" /></a>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="vc_col-sm-3 wpb_column column_container  ">
+                                                <div class="wpb_wrapper">
+                                                    <div class="wpb_single_image wpb_content_element vc_align_center">
+                                                        <figure class="wpb_wrapper vc_figure">
+                                                            <a href="http://google.com" target="_blank" class="vc_single_image-wrapper all  vc_box_border_grey"><img width="175" height="175" src="img/eco.png" class="vc_single_image-img attachment-full" alt="" srcset="img/eco.png 175w, img/eco.png 150w, img/eco.png 70w" sizes="(max-width: 175px) 100vw, 175px" /></a>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="contacts" class="vc_row vc_inner vc_row-fluid vc_custom_1453730540825 row" style="" data-token="hJpET">
+                                <div class="container">
+                                    <div class="vc_col-sm-6 wpb_column">
+                                        <div class="wpb_wrapper">
+                                            <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+                                                <div class="wpb_wrapper">
+                                                    <div style="background:#fff; max-width:360px; padding:40px 50px;">
+                                                        <h3>Location</h3>
+                                                        <ul class="list">
+                                                            <li><i class="fa fa-map-marker"></i>ECOTES UNIVERSITY BENIN</li>
+                                                            <li><i class="fa fa-envelope"></i>alexonozor@gmail.com</li>
+                                                            <li><i class="fa fa-phone"></i>+234 812 221 5637</li>
+                                                            <li><i class="fa fa-clock-o"></i>16:00 - 18:00</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vc_col-sm-6 wpb_column column_container  ">
+                                        <div class="wpb_wrapper" style="background: url('img/bg.jpg');">
+                                            <div class="vncp-map" data-address="benin republic" data-zoom="15" data-relative-offset="true" data-offset-x="10" data-fill-row="true"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+        <section class="footer">
+            <div class="container">
+                <div class="col-sm-4">
+                    <div class="widget footer_widget widget_about">
+                        <h5 class="widget-head">About <span class='highlight'>ENGAGE</span></h5>
+                        <p class='text-alt'><small>ENGAGE is a platform for learners at zero level to learn the basics of Web design and mobile development.</small></p></div>
+                </div>
+            </div>
+            <div class="footer-base">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="socials-nav align-right">
+                                <li class="socials-nav-item">
+                                    <a href="http://facebook.com" target="_blank">
+                                        <span class="fa fa-facebook"></span>
+                                    </a>
+                                </li>
+                                <li class="socials-nav-item">
+                                    <a href="http://twitter.com" target="_blank">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                </li>
+                                <li class="socials-nav-item">
+                                    <a href="http://google.com" target="_blank">
+                                        <span class="fa fa-google"></span>
+                                    </a>
+                                </li>
+                                <li class="socials-nav-item">
+                                    <a href="http://instagram.com" target="_blank">
+                                        <span class="fa fa-instagram"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <p class="text-alt">
+                                <small>
+								All Rights Reserved 2017 </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal-window vivaco-3670 no-overlay " data-modal="vivaco-3670" data-overlay="0">
+            <div class="modal-box small   " data-animation="fadeIn" data-duration="300"><span class="close-btn icon icon-office-52"></span></div>
+        </div>
+        <style></style>
+        <style>
+        .vivaco-3655 .modal-box {
+            width: 780px;
+            height: 480px;
+        }
+        
+        .vivaco-3655 .modal-box {
+            -webkit-animation-duration: 0.5s;
+            -moz-animation-duration: 0.5s;
+            -ms-animation-duration: 0.5s;
+            -o-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+        }
+        </style>
+        <style>
+        .vivaco-3455 .modal-box {
+            width: 400px;
+            height: 445px;
+        }
+        
+        .vivaco-3455 .modal-box {
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            -ms-animation-duration: 1s;
+            -o-animation-duration: 1s;
+            animation-duration: 1s;
+        }
+        </style>
+        <link rel='stylesheet' id='vc_tta_style-css' href='css/js_composer_tta.min.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='vc_linecons-css' href='css/vc_linecons_icons.min.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='animate-css-css' href=css/animate.min.css' type='text/css' media='' />
+        <link rel='stylesheet' id='prettyphoto-css' href='css/prettyPhoto.min.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='vc_pageable_owl-carousel-css-css' href='css/owl.min.css' type='text/css' media='' />
+        <script type='text/javascript' src='js/jquery.form.min.js'></script>
+        <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpcf7 = {
+            "recaptcha": {
+                "messages": {
+                    "empty": "Please verify that you are not a robot."
+                }
+            }
+        };
+        /* ]]> */
+        </script>
+        <script type='text/javascript' src='js/scripts.js'></script>
+        <script type='text/javascript' src='js/main.js'></script>
+        <script type='text/javascript' src='js/events-frontend.js'></script>
+        <script type='text/javascript' src='js/jquery.blockUI.min.js'></script>
+        <script type='text/javascript'>
+        /* <![CDATA[ */
+        var woocommerce_params = {
+            "ajax_url": "\/wp-admin\/admin-ajax.php",
+            "wc_ajax_url": "\/?wc-ajax=%%endpoint%%"
+        };
+        /* ]]> */
+        </script>
+        <script type='text/javascript' src='js/woocommerce.min.js'></script>
+        <script type='text/javascript' src='js/jquery.cookie.min.js'></script>
+        <script type='text/javascript'>
+        /* <![CDATA[ */
+        var wc_cart_fragments_params = {
+            "ajax_url": "\/wp-admin\/admin-ajax.php",
+            "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
+            "fragment_name": "wc_fragments"
+        };
+        /* ]]> */
+        </script>
+        <script type='text/javascript' src='js/cart-fragments.min.js'></script>
+        <script type='text/javascript' src=js/jquery.plugin.min.js'></script>
+        <script type='text/javascript' src='js/bootstrap.min.js'></script>
+        <script type='text/javascript' src='js/jquery.waypoints.min.js'></script>
+        <script type='text/javascript'>
+        /* <![CDATA[ */
+        var localizedVars = {
+            "markerURL": "http:\/\/demo.ventcampwp.com\/wp-content\/themes\/ventcamp\/img\/marker-46x46.png"
+        };
+        /* ]]> */
+        </script>
+        <script type='text/javascript' src='js/ventcamp.js'></script>
+        <script type='text/javascript' src='js/wp-embed.min.js'></script>
+        <script type='text/javascript' src='js/picturefill.min.js'></script>
+        <script type='text/javascript' src='js/js_composer_front.min.js'></script>
+        <script type='text/javascript' src='js/vc-accordion.min.js'></script>
+        <script type='text/javascript' src='js/vc-tta-autoplay.min.js'></script>
+        <script type='text/javascript' src='js/vc-tabs.min.js'></script>
+        <script type='text/javascript' src='js/waypoints.min.js'></script>
+        <script type='text/javascript' src='js/jquery.appear.js'></script>
+        <script type='text/javascript' src='js/jquery.countTo.js'></script>
+        <script type='text/javascript'>
+        /* <![CDATA[ */
+        var vsc_custom_contact_form_7_ETvhi = {
+            "_wpcf7_vsc_use_mailchimp": "",
+            "_wpcf7_vsc_mailchimp_list_id": "",
+            "_wpcf7_vsc_double_opt": "",
+            "_wpcf7_vsc_redirect_after_send": "",
+            "_wpcf7_vsc_redirect_url": "",
+            "_wpcf7_vsc_hide_after_send": "1"
+        };
+        var vsc_custom_contact_form_7_CNvpt = {
+            "_wpcf7_vsc_use_mailchimp": "",
+            "_wpcf7_vsc_mailchimp_list_id": "",
+            "_wpcf7_vsc_double_opt": "",
+            "_wpcf7_vsc_redirect_after_send": "",
+            "_wpcf7_vsc_redirect_url": "",
+            "_wpcf7_vsc_hide_after_send": "1"
+        };
+        /* ]]> */
+        </script>
+        <script type='text/javascript' src='js/jquery.countTo.js'></script>
+        <script type='text/javascript' src='js/jquery.prettyPhoto.min.js'></script>
+        <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
+        <script type='text/javascript' src='js/owl.carousel.min.js'></script>
+        <script type='text/javascript' src='js/imagesloaded.pkgd.min.js'></script>
+        <script type='text/javascript' src='js/underscore.min.js'></script>
+        <script type='text/javascript' src='js/vc_grid.min.js'></script>
+        <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?v=3&#038;libraries=places&#038;key&#038;ver=4.7.3'></script>
+        <script type='text/javascript' src='js/ventcamp-modal-box.js'></script>
+    </div>
+</body>
+
+</html>
